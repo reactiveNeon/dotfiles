@@ -5,30 +5,43 @@ add_newline = true
 
 # Change the default prompt format
 format = """\
-[╭╴](238)$env_var\
-$all[╰─](238)$character"""
+[╭╴](blue)\
+$os\
+$shell\
+$all\
+[╰─](blue)\
+$character"""
 
 # Change the default prompt characters
 [character]
-success_symbol = "[](238)"
-error_symbol = "[](238)"
+success_symbol = "[](blue)"
+error_symbol = "[](blue)"
 
-# Shows an icon that should be included by zshrc script based on the distribution or os
-[env_var.STARSHIP_DISTRO]
-format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
-variable = "STARSHIP_DISTRO"
+[os]
 disabled = false
+
+[os.symbols]
+Arch = " "
+Debian = " "
+Fedora = " "
+Ubuntu = " "
+Windows = " "
+
+[shell]
+disabled = false
+powershell_indicator = "pwsh"
+bash_indicator = "bash"
 
 # Shows the username
 [username]
 style_user = "red bold"
 style_root = "black bold"
-format = '[\($user@]($style)'
+format = '[\(](blue)[$user@]($style)'
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[$hostname\)](bold red) '
+format = '[$hostname](bold red)[\)](blue) '
 disabled = false
 
 [directory]
@@ -37,7 +50,7 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
-format = "at [$path]($style)[$read_only]($read_only_style) "
+format = "[in](blue) [$path]($style)[$read_only]($read_only_style) "
 
 #  - alternate git branch logo
 [git_branch]
@@ -62,17 +75,8 @@ staged = '[++\($count\)](green)'
 renamed = "襁 "
 deleted = " "
 
-[terraform]
-format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
-
-[vagrant]
-format = "via [ vagrant $version]($style) "
-
 [docker_context]
 format = "via [ $context](bold blue) "
-
-[helm]
-format = "via [ $version](bold purple) "
 
 [python]
 symbol = " "
