@@ -80,7 +80,6 @@ format = "via [ $context](bold blue) "
 
 [python]
 symbol = " "
-python_binary = "python3"
 
 [nodejs]
 format = "via [ $version](bold green) "
