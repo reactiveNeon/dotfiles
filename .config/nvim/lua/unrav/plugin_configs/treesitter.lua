@@ -1,5 +1,4 @@
--- TODO: remove this if not required
-require 'nvim-treesitter.install'.compilers = { "clang", vim.fn.getenv('CC'), "cc", "gcc", "cl", "zig" } -- README
+require 'nvim-treesitter.install'.compilers = { "clang", vim.fn.getenv('CC'), "cc", "gcc", "cl", "zig" }
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)

@@ -16,7 +16,7 @@ local function diagnostics_indicator(num, _, diagnostics, _)
             table.insert(result, symbols[name] .. " " .. count)
         end
     end
-    -- TODO: what is this error?
+    -- TODO: correct this error
     result = table.concat(result, " ")
     return #result > 0 and result or ""
 end
