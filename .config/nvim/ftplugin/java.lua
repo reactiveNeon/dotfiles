@@ -1,5 +1,14 @@
 local jdtls_dir = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 
+local jdtls_config_dir = jdtls_dir .. "/config_"
+if jit.os == "Windows" then
+    jdtls_config_dir = jdtls_config_dir .. "win"
+elseif jit.os == "Linux" then
+    jdtls_config_dir = jdtls_config_dir .. "linux"
+elseif jit.os == "OSX" then
+    jdtls_config_dir = jdtls_config_dir .. "mac"
+end
+
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
 os.execute("mkdir " .. workspace_dir)
@@ -25,7 +34,7 @@ local config = {
     -- 💀
     '-jar', jdtls_dir .. "/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
     -- 💀
-    '-configuration', jdtls_dir .. "/config_win", -- README
+    '-configuration', jdtls_config_dir,
     -- 💀
     -- See `data directory configuration` section in the Readme
     '-data', workspace_dir,
