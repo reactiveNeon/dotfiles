@@ -6,9 +6,11 @@ add_newline = true
 # Change the default prompt format
 format = """\
 [╭╴](blue)\
+$all\
+$fill\
 $os\
 $shell\
-$all\
+$line_break\
 [╰─](blue)\
 $character"""
 
@@ -16,6 +18,9 @@ $character"""
 [character]
 success_symbol = "[](blue)"
 error_symbol = "[](blue)"
+
+[fill]
+symbol = " "
 
 [os]
 disabled = false
