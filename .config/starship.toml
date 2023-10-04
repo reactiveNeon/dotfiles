@@ -5,19 +5,38 @@ add_newline = true
 
 # Change the default prompt format
 format = """\
-[╭╴](blue)\
-$all\
-$fill\
+$username\
+[@](green bold)\
+$hostname\
+[ on ](blue)\
 $os\
 $shell\
-$line_break\
-[╰─](blue)\
-$character"""
+$all\
+"""
 
-# Change the default prompt characters
-[character]
-success_symbol = "[](blue)"
-error_symbol = "[](blue)"
+### ALTERNATE prompt format ###
+# format = """
+# [╭─user───❯](bold blue) $username
+# [┣─system─❯](bold yellow) $hostname
+# [┣─project❯](bold red) $directory$rust$git_branch$git_state$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
+# [╰─cmd────❯](bold green)
+# """
+
+### OLD prompt format ### 
+# format = """\
+# [╭╴](blue)\
+# $all\
+# $fill\
+# $os\
+# $shell\
+# $line_break\
+# [╰─](blue)\
+# $character"""
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red)"
 
 [fill]
 symbol = " "
@@ -26,7 +45,7 @@ symbol = " "
 disabled = false
 
 [os.symbols]
-Arch = " "
+Arch = "[](green) "
 Debian = " "
 Fedora = " "
 Ubuntu = " "
@@ -35,24 +54,24 @@ Windows = " "
 [shell]
 disabled = false
 powershell_indicator = "pwsh"
-bash_indicator = "bash"
+bash_indicator = "[bash](green)"
 
 # Shows the username
 [username]
-style_user = "red bold"
-style_root = "black bold"
-format = '[\(](blue)[$user@]($style)'
+style_user = "yellow bold"
+style_root = "root bold"
+format = '[$user]($style)'
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[$hostname](bold red)[\)](blue) '
+format = '[$hostname](bold yellow)'
 disabled = false
 
 [directory]
 truncation_length = 4
 truncation_symbol = "…/"
-home_symbol = " ~"
+home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
 format = "[in](blue) [$path]($style)[$read_only]($read_only_style) "
@@ -62,7 +81,7 @@ format = "[in](blue) [$path]($style)[$read_only]($read_only_style) "
 symbol = " "
 format = "on [$symbol$branch]($style) "
 truncation_length = 4
-truncation_symbol = "…/"
+truncation_symbol = ".../"
 style = "bold green"
 
 [git_status]
@@ -74,26 +93,29 @@ untracked = " "
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-stashed = " "
+stashed = "󰓜 "
 modified = " "
 staged = '[++\($count\)](green)'
-renamed = "襁 "
+renamed = " "
 deleted = " "
 
 [docker_context]
-format = "via [ $context](bold blue) "
+format = "via [ $context](bold blue) "
 
 [python]
-symbol = " "
+symbol = " "
+
+[rust]
+symbol = " "
 
 [nodejs]
-format = "via [ $version](bold green) "
+format = "via [ $version](bold green) "
 
 [ruby]
-format = "via [ $version]($style) "
+format = "via [ $version]($style) "
 
 [kubernetes]
-format = 'on [ $context\($namespace\)](bold purple) '
+format = 'on [󱃾 $context\($namespace\)](bold purple) '
 disabled = false
 
 [kubernetes.context_aliases]
