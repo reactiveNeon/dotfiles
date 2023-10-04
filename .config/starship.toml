@@ -108,6 +108,15 @@ symbol = " "
 [rust]
 symbol = " "
 
+[java]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[lua]
+symbol = " "
+
 [nodejs]
 format = "via [ $version](bold green) "
 
