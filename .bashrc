@@ -15,3 +15,5 @@ PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 eval "$(starship init bash)"
 source ~/.bash_completion/alacritty
+export DENO_INSTALL="/home/unrav/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
