@@ -17,3 +17,4 @@ eval "$(starship init bash)"
 source ~/.bash_completion/alacritty
 export DENO_INSTALL="/home/unrav/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
