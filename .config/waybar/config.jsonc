@@ -18,6 +18,15 @@
     "tooltip": true 
   },
 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias}"
+  },
+
 	"clock": {
 		"format": " {:%H:%M}",
 		"tooltip": "true",
@@ -55,8 +64,8 @@
     "on-scroll-up": "playerctl previous",
     "on-scroll-down": "playerctl next",
     "format-icons": {
-      "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
-      "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+      "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥 󰒭</span>",
+      "Paused": "<span foreground='#928374'>󰒮 󰐌 󰒭</span>"
     }
   },
 
@@ -120,7 +129,10 @@
 
 	"tray": {
 		"icon-size": 16,
-		"spacing": 5
+		"spacing": 5,
+    "icons": {
+      "blueman": ""
+    }
 	},
 
 	"backlight": {

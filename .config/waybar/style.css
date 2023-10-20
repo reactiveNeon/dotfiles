@@ -48,7 +48,7 @@ window#waybar {
 #battery,
 #pulseaudio,
 #network,
-#custom-randwall,
+#custom-random-wallpaper,
 #custom-launcher {
     background: transparent;
     padding: 5px 5px 5px 5px;
@@ -137,10 +137,9 @@ window#waybar {
     margin-left: 0px;
 }
 
-#custom-randwall {
+#custom-random-wallpaper {
     color: #f4d9e1;
     border-radius: 8px;
-    margin-right: 0px;
 }
 
 #custom-launcher {
