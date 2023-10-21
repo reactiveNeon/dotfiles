@@ -9,7 +9,7 @@
   "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
   // "modules-center": ["cpu", "memory", "disk"],
   // "modules-center": ["backlight"],
-  "modules-right": ["tray", "custom/random-wallpaper", "network", "pulseaudio", "battery", "clock", "custom/power"],
+  "modules-right": ["tray", "custom/random-wallpaper", "bluetooth", "network", "pulseaudio", "battery", "clock", "custom/power"],
   
   // Modules configuration
   "custom/power": {
@@ -21,10 +21,11 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "", // an empty format will hide the module
-    "format-connected": " {num_connections}",
-    "tooltip-format": " {device_alias}",
+    // "format-connected": "󰂯 {num_connections}",
+    "format-connected": "󰂯",
+    "tooltip-format": "󰂯 {device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": " {device_alias}"
+    "tooltip-format-enumerate-connected": "󰂯 {device_alias}"
   },
 
 	"clock": {
@@ -92,7 +93,7 @@
     "format":"{icon} {capacity}%",
     "format-charging": "{icon} {capacity}% ",
     "format-plugged": "{capacity}% ",
-    "format-alt": "{icon} {time}",
+    "format-alt": "{icon}",
     // "format-good": "", // An empty format will hide the module
     "format-full": "",
     "format-icons": ["", "", "", "", ""]
