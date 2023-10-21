@@ -23,16 +23,22 @@ toggle_mic() {
     wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 }
 
-if [[ $1 == "--get" ]]; then
-	get_volume
-elif [[ $1 == "--inc" ]]; then
-	increase_volume
-elif [[ $1 == "--dec" ]]; then
-	decrease_volume
-elif [[ $1 == "--toggle-mute" ]]; then
-	toggle_mute
-elif [[ $1 == "--toggle-mic" ]]; then
-	toggle_mic
-else
-    get_volume
-fi
+case ${1,,} in
+    --get | --get-vol)
+        get_volume_percent
+        ;;
+    --inc)
+        increase_volume
+        ;;
+    --dec)
+        decrease_volume
+        ;;
+    --toggle-mute)
+        toggle_mute
+        ;;
+    --toggle-mic)
+        toggle_mic
+        ;;
+    *)
+        echo "Enter a valid option!"
+esac
