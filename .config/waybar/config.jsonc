@@ -6,7 +6,7 @@
   "margin-bottom": 0,
   "margin-left": 0,
   "margin-right": 0,
-  "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl-prev", "custom/playerctl-play-pause", "custom/playerctl-next", "custom/playerlabel"],
   // "modules-center": ["cpu", "memory", "disk"],
   // "modules-center": ["backlight"],
   "modules-right": ["tray", "custom/random-wallpaper", "bluetooth", "network", "pulseaudio", "battery", "clock", "custom/power"],
@@ -56,32 +56,50 @@
     }
   },
 
-  "custom/playerctl": {
+  "custom/playerctl-prev": {
     "format": "{icon}",
     "return-type": "json",
-    "max-length": 48,
-    "exec": "playerctl --player=spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=spotify previous",
+    "on-scroll-up": "playerctl --player=spotify previous",
+    "on-scroll-down": "playerctl --player=spotify next",
+    "format-icons": {
+      "Playing": "<span foreground='#E5B9C6'>󰒮</span>",
+      "Paused": "<span foreground='#928374'>󰒮</span>"
+    }
+  },
+
+  "custom/playerctl-next": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=spotify next",
+    "on-scroll-up": "playerctl --player=spotify previous",
+    "on-scroll-down": "playerctl --player=spotify next",
+    "format-icons": {
+      "Playing": "<span foreground='#E5B9C6'>󰒭</span>",
+      "Paused": "<span foreground='#928374'>󰒭</span>"
+    }
+  },
+
+  "custom/playerctl-play-pause": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
     "on-click": "playerctl --player=spotify play-pause",
     "on-scroll-up": "playerctl --player=spotify previous",
     "on-scroll-down": "playerctl --player=spotify next",
     "format-icons": {
-      "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥 󰒭</span>",
-      "Paused": "<span foreground='#928374'>󰒮 󰐌 󰒭</span>"
+      "Playing": "<span foreground='#E5B9C6'></span>",
+      "Paused": "<span foreground='#928374'></span>"
     }
   },
-
+  // {\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}
   "custom/playerlabel": {
     "format": "<span>{}</span>",
     "return-type": "json",
     "max-length": 48,
-    "exec": "playerctl --player=spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click-middle": "playerctl --player=spotify play-pause",
-    "on-click": "playerctl --player=spotify previous",
-    "on-click-right": "playerctl --player=spotify next",
-    "format-icons": {
-      "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥 󰒭</span>",
-      "Paused": "<span foreground='#928374'>󰒮 󰐌 󰒭</span>"
-    }
+    "exec": "playerctl --player=spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
   },
 
 	"battery": {

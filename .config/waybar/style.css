@@ -161,13 +161,38 @@ window#waybar {
     margin-left: 10px;
 }
 
-#custom-playerctl {
+#custom-playerctl-prev {
     background: #282828;
-    padding-left: 15px;
-    padding-right: 14px;
-    border-radius: 16px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
+    padding-left: 10px;
+    padding-right: 5px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#custom-playerctl-next {
+    background: #282828;
+    padding-left: 5px;
+    padding-right: 10px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#custom-playerctl-play-pause {
+    background: #282828;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 0px;
