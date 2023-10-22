@@ -8,11 +8,11 @@ get_volume_percent() {
 }
 
 increase_volume() {
-    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ $1%+
 }
 
 decrease_volume() {
-    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ $1%-
 }
 
 toggle_mute() {
@@ -28,10 +28,10 @@ case ${1,,} in
         get_volume_percent
         ;;
     --inc)
-        increase_volume
+        increase_volume "$2"
         ;;
     --dec)
-        decrease_volume
+        decrease_volume "$2"
         ;;
     --toggle-mute)
         toggle_mute

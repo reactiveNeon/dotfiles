@@ -33,6 +33,7 @@ sort = yes
 
 font = Twemoji, Symbols Nerd Font, JetBrainsMono Nerd Font Mono 10
 
+
 # Possible values are:
 # full: Allow a small subset of html markup in notifications:
 #        <b>bold</b>
@@ -100,7 +101,8 @@ show_indicators = yes
 
 ### Icons ###
 icon_position = left
-max_icon_size = 32
+# min_icon_size = 32
+max_icon_size = 64
 
 ### History ###
 # Should a notification popped up from history be sticky or timeout
@@ -314,15 +316,21 @@ per_monitor_dpi = false
     #default_icon = /path/to/icon
 
 [urgency_low]
-    background = "#253845"
-    foreground = "#3F4252"
+    ; background = "#253845"
+    ; foreground = "#3F4252"
+    background = "#1D202E"
+    foreground = "#AD584F"
     frame_color = "#3F4252"
     icon = "~/.config/dunst/icons/normal.png"
+    icon_size = 32
     timeout = 10
 
 [urgency_normal]
-    background = "#1D202E"
-    foreground = "#AD584F"
+    ; background = "#1D202E"
+    ; foreground = "#AD584F"
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
     frame_color = "#AD584F"
     icon = "~/.config/dunst/icons/normal.png"
+    icon_size = 32
     timeout = 10
