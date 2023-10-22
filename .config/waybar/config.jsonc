@@ -60,10 +60,10 @@
     "format": "{icon}",
     "return-type": "json",
     "max-length": 48,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl previous",
-    "on-scroll-down": "playerctl next",
+    "exec": "playerctl --player=spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-scroll-up": "playerctl --player=spotify previous",
+    "on-scroll-down": "playerctl --player=spotify next",
     "format-icons": {
       "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥 󰒭</span>",
       "Paused": "<span foreground='#928374'>󰒮 󰐌 󰒭</span>"
@@ -74,10 +74,10 @@
     "format": "<span>{}</span>",
     "return-type": "json",
     "max-length": 48,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click-middle": "playerctl play-pause",
-    "on-click": "playerctl previous",
-    "on-click-right": "playerctl next",
+    "exec": "playerctl --player=spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl --player=spotify play-pause",
+    "on-click": "playerctl --player=spotify previous",
+    "on-click-right": "playerctl --player=spotify next",
     "format-icons": {
       "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥 󰒭</span>",
       "Paused": "<span foreground='#928374'>󰒮 󰐌 󰒭</span>"
