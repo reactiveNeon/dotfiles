@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 get_wallpaper_path() {
     local path=$(swww query | awk -F'image: ' '{print $2}')
     echo "$path"

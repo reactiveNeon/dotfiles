@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 increase_display_brightness() {
     xbacklight -inc 5
 }

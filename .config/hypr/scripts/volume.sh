@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 get_volume_percent() {
     output=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
     val=$(echo $output | awk -F'[: ]+' '{print $2}')
