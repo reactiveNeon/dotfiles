@@ -15,7 +15,7 @@
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
-    "tooltip": true 
+    "tooltip": "Power"
   },
 
   "bluetooth": {
@@ -59,7 +59,7 @@
   "custom/playerctl-prev": {
     "format": "{icon}",
     "return-type": "json",
-    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\", \"tooltip\": \"Previous\"}' -F",
     "on-click": "playerctl --player=spotify previous",
     "on-scroll-up": "playerctl --player=spotify previous",
     "on-scroll-down": "playerctl --player=spotify next",
@@ -72,7 +72,7 @@
   "custom/playerctl-next": {
     "format": "{icon}",
     "return-type": "json",
-    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\", \"tooltip\": \"Next\"}' -F",
     "on-click": "playerctl --player=spotify next",
     "on-scroll-up": "playerctl --player=spotify previous",
     "on-scroll-down": "playerctl --player=spotify next",
@@ -85,7 +85,7 @@
   "custom/playerctl-play-pause": {
     "format": "{icon}",
     "return-type": "json",
-    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\"}' -F",
+    "exec": "playerctl --player=spotify status --format '{\"alt\": \"{{status}}\", \"tooltip\": \"Play/Pause\"}' -F",
     "on-click": "playerctl --player=spotify play-pause",
     "on-scroll-up": "playerctl --player=spotify previous",
     "on-scroll-down": "playerctl --player=spotify next",
@@ -178,11 +178,15 @@
 
   "custom/random-wallpaper": {
     "format": "󰸉",
+    "return-type": "json",
+    "exec": "echo '{\"tooltip\": \"Random Wallpaper\"}'",
     "on-click": "bash $HOME/.config/hypr/scripts/random-wallpaper.sh"
   },
   
   "custom/launcher": {
     "format": "󰈸",
+    "return-type": "json",
+    "exec": "echo '{\"tooltip\": \"Application Launcher\"}'",
     // "on-click": "bash $HOME/.config/rofi/launcher.sh",
     "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
     // "on-click-right": "bash $HOME/.config/rofi/run.sh"  
