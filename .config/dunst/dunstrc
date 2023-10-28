@@ -31,8 +31,9 @@ separator_color = auto
 # Sort messages by urgency.
 sort = yes
 
-font = JetBrainsMono Nerd Font Mono, Twemoji, Symbols Nerd Font 10
+# font = JetBrainsMono Nerd Font Mono, Twemoji, Symbols Nerd Font 10
 # font = Twemoji, Symbols Nerd Font, JetBrainsMono Nerd Font Mono 10
+font = Symbols Nerd Font, JetBrainsMono Nerd Font Mono, Twemoji 10
 # font = JetBrainsMono Nerd Font Mono 10
 
 # Possible values are:
