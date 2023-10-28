@@ -69,7 +69,7 @@ markup = full
 #   %n  progress value if set without any extra characters
 #   %%  Literal %
 # Markup is allowed
-format = "<i>%a</i>\n\n<b>%s</b>\n%b"
+format = "<i>%a</i>\n<b>%s</b>\n%b"
 
 # Alignment of message text.
 # Possible values are "left", "center" and "right".
