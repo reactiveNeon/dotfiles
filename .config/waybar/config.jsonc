@@ -9,7 +9,7 @@
   "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl-prev", "custom/playerctl-play-pause", "custom/playerctl-next", "custom/playerlabel"],
   // "modules-center": ["cpu", "memory", "disk"],
   // "modules-center": ["backlight"],
-  "modules-right": ["tray", "custom/random-wallpaper", "bluetooth", "network", "pulseaudio", "battery", "clock", "custom/power"],
+  "modules-right": ["tray", "custom/random-wallpaper", "pulseaudio", "battery", "clock", "custom/power"],
   
   // Modules configuration
   "custom/power": {
@@ -151,7 +151,7 @@
 		"icon-size": 16,
 		"spacing": 5,
     "icons": {
-      "blueman": ""
+      "blueman-applet": ""
     }
 	},
 
