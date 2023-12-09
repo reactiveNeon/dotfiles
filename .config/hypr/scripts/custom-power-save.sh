@@ -10,9 +10,9 @@ REFRESH_RATE=$(< $DB_PATH)
 
 notify_user() {
     if [[ "$REFRESH_RATE" -eq 60 ]]; then
-        notify-send -i "$ICON_DIR/toggle-on.png" "Custom Power Save Mode" "Enabled"
+        notify-send -i "$ICON_DIR/toggle-on.png" -h "string:x-dunst-stack-tag:custom_power_save_notif" "Custom Power Save Mode" "Enabled"
     else
-        notify-send -i "$ICON_DIR/toggle-off.png" "Custom Power Save Mode" "Disabled"
+        notify-send -i "$ICON_DIR/toggle-off.png" -h "string:x-dunst-stack-tag:custom_power_save_notif" "Custom Power Save Mode" "Disabled"
     fi
 }
 
