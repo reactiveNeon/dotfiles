@@ -1,0 +1,4 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "melange-nvim": { "branch": "master", "commit": "f15922543dd70b360335effb61411c05c710b99c" }
+}
