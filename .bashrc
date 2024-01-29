@@ -18,3 +18,9 @@ source ~/.bash_completion/swww.bash
 export DENO_INSTALL="/home/unrav/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+
+export PATH=/home/unrav/dev/flutter/bin:$PATH
