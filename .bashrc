@@ -19,8 +19,15 @@ export DENO_INSTALL="/home/unrav/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export ANDROID_HOME=$HOME/android-sdk
+# export ANDROID_HOME=$HOME/android-sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 
 export PATH=/home/unrav/dev/flutter/bin:$PATH
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
