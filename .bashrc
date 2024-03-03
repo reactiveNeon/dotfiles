@@ -15,19 +15,22 @@ PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 eval "$(starship init bash)"
 source ~/.bash_completion/swww.bash
+
+### Deno Path
 export DENO_INSTALL="/home/unrav/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+### Flutter Path
+export PATH=/home/unrav/development/flutter/bin:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # export ANDROID_HOME=$HOME/android-sdk
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 
-export PATH=/home/unrav/dev/flutter/bin:$PATH
-
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+### THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
