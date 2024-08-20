@@ -19,7 +19,7 @@ return {
             {text = "󰌵", texthl = "DiagnosticSignHint"})
 
         require("neo-tree").setup({
-            close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+            close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
             popup_border_style = "rounded",
             enable_git_status = true,
             enable_diagnostics = true,
@@ -112,7 +112,7 @@ return {
             commands = {},
             window = {
                 position = "left",
-                width = 25,
+                width = 40,
                 mapping_options = {
                     noremap = true,
                     nowait = true,
@@ -287,8 +287,7 @@ return {
             }
         })
 
-        vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
-        vim.keymap.set('n', '<leader>e', ':Neotree show toggle reveal<CR>')
-        vim.keymap.set('n', '<leader>fe', ':Neotree reveal<CR>')
+        vim.keymap.set('n', "\\", ":Neotree reveal<CR>")
+        vim.keymap.set('n', "<leader>e", ":Neotree show toggle reveal<CR>")
     end,
 }
