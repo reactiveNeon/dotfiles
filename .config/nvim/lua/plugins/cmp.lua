@@ -4,18 +4,39 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-cmdline",
             "FelipeLema/cmp-async-path",
         },
         config = function()
             local cmp = require('cmp')
+
+            local cmdline_mapping = cmp.mapping.preset.insert({
+                ["<CR>"] = cmp.mapping({
+                    c = function (fallback)
+                        fallback()
+                    end
+                }),
+            })
+
+            cmp.setup.cmdline({ '/', '?' }, {
+                mapping = cmdline_mapping,
+                sources = {
+                    { name = "buffer" }
+                }
+            })
+
+            cmp.setup.cmdline(':', {
+                mapping = cmdline_mapping,
+                sources = {
+                    { name = "cmdline" }
+                }
+            })
 
             cmp.setup({
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
                 }, {
                     { name = "luasnip" },
-                }, {
-                    { name = "buffer" },
                 }, {
                     { name = "async_path" },
                 }),
